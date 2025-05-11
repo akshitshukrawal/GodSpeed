@@ -1,0 +1,17 @@
+# CREATE
+http.post./schema/subscription:
+  summary: Create a new Subscription
+  description: Create Subscription from database
+  fn: com.biz.schema.subscription.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Subscription'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+

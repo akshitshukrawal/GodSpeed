@@ -1,0 +1,18 @@
+# DELETE
+http.delete./schema/subscription/{id}:
+  summary: Delete a Subscription
+  description: Delete Subscription from database
+  fn: com.biz.schema.subscription.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+

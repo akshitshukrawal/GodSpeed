@@ -1,0 +1,14 @@
+http.get./verify/user:
+  fn: helloUser
+  authn: false
+  summary: Greet the authenticated user
+  responses:
+    200:
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string

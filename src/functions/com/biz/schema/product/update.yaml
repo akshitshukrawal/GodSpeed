@@ -1,0 +1,8 @@
+summary: Update Product
+tasks:
+  - id: schema_product_update
+    fn: datasource.schema.Product.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

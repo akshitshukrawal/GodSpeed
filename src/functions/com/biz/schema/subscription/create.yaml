@@ -1,0 +1,6 @@
+summary: Create Subscription
+tasks:
+  - id: schema_subscription_create
+    fn: datasource.schema.Subscription.create
+    args:
+      data: <% inputs.body %>

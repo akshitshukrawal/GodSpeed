@@ -1,0 +1,17 @@
+# CREATE
+http.post./schema/company:
+  summary: Create a new Company
+  description: Create Company from database
+  fn: com.biz.schema.company.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Company'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+

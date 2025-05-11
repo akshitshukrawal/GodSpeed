@@ -1,0 +1,6 @@
+summary: Create Company
+tasks:
+  - id: schema_company_create
+    fn: datasource.schema.Company.create
+    args:
+      data: <% inputs.body %>

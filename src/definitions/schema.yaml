@@ -1,0 +1,55 @@
+Company:
+  type: object
+  properties:
+    name:
+      type: string
+Product:
+  type: object
+  properties:
+    name:
+      type: string
+    description:
+      type: string
+      nullable: true
+    companyId:
+      type: string
+Package:
+  type: object
+  properties:
+    name:
+      type: string
+    price:
+      type: number
+    interval:
+      type: string
+    productId:
+      type: string
+Subscription:
+  type: object
+  properties:
+    userId:
+      type: string
+    packageId:
+      type: string
+    active:
+      type: boolean
+      default: true
+    startDate:
+      type: string
+      format: date-time
+    endDate:
+      type: string
+      format: date-time
+      nullable: true
+User:
+  type: object
+  properties:
+    email:
+      type: string
+    role:
+      type: string
+      enum:
+        - ADMIN
+        - USER
+    companyId:
+      type: string

@@ -1,0 +1,7 @@
+summary: Delete Product
+tasks:
+  - id: schema_product_delete
+    fn: datasource.schema.Product.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

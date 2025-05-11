@@ -1,0 +1,22 @@
+{
+  "mongodb": {
+    "mode": "single",
+    "dbName": "godspeed",
+    "ports": [
+      27017
+    ]
+  },
+  "postgresql": false,
+  "kafka": false,
+  "elasticsearch": false,
+  "redis": false,
+  "servicePort": 3000,
+  "gsNodeServiceVersion": "latest",
+  "projectName": "my-crud-app",
+  "meta": {
+    "createTimestamp": "2025-05-11T07:36:03.558Z",
+    "lastUpdateTimestamp": "2025-05-11T07:36:03.558Z",
+    "cliVersionWhileCreation": "2.9.9",
+    "cliVersionWhileLastUpdate": "2.9.9"
+  }
+}

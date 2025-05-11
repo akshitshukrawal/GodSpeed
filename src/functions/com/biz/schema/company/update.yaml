@@ -1,0 +1,8 @@
+summary: Update Company
+tasks:
+  - id: schema_company_update
+    fn: datasource.schema.Company.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

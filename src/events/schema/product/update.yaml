@@ -1,0 +1,23 @@
+# UPDATE
+http.put./schema/product/{id}:
+  summary: Update a Product
+  description: Update Product from database
+  fn: com.biz.schema.product.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Product'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+

@@ -1,0 +1,7 @@
+summary: Fetch Product
+tasks:
+  - id: schema_product_one
+    fn: datasource.schema.Product.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

@@ -1,0 +1,17 @@
+# SEARCH
+http.post./schema/company/search:
+  summary: Fetch multiple Company
+  description: Fetch multiple Company from database
+  fn: com.biz.schema.company.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+

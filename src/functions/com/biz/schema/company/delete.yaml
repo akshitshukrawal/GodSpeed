@@ -1,0 +1,7 @@
+summary: Delete Company
+tasks:
+  - id: schema_company_delete
+    fn: datasource.schema.Company.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

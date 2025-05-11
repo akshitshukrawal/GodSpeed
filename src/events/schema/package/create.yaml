@@ -1,0 +1,17 @@
+# CREATE
+http.post./schema/package:
+  summary: Create a new Package
+  description: Create Package from database
+  fn: com.biz.schema.package.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Package'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+

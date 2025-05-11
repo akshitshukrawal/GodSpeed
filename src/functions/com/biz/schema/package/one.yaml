@@ -1,0 +1,7 @@
+summary: Fetch Package
+tasks:
+  - id: schema_package_one
+    fn: datasource.schema.Package.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

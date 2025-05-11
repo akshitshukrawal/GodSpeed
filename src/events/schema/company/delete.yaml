@@ -1,0 +1,18 @@
+# DELETE
+http.delete./schema/company/{id}:
+  summary: Delete a Company
+  description: Delete Company from database
+  fn: com.biz.schema.company.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+

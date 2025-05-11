@@ -1,0 +1,23 @@
+# UPDATE
+http.put./schema/package/{id}:
+  summary: Update a Package
+  description: Update Package from database
+  fn: com.biz.schema.package.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Package'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+

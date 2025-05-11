@@ -1,0 +1,17 @@
+# SEARCH
+http.post./schema/package/search:
+  summary: Fetch multiple Package
+  description: Fetch multiple Package from database
+  fn: com.biz.schema.package.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+

@@ -1,0 +1,5 @@
+summary: Fetch many Subscription
+tasks:
+  - id: schema_subscription_search
+    fn: datasource.schema.Subscription.findMany
+    args: {}

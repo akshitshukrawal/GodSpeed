@@ -1,0 +1,7 @@
+summary: Delete Package
+tasks:
+  - id: schema_package_delete
+    fn: datasource.schema.Package.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

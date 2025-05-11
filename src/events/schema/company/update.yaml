@@ -1,0 +1,23 @@
+# UPDATE
+http.put./schema/company/{id}:
+  summary: Update a Company
+  description: Update Company from database
+  fn: com.biz.schema.company.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Company'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+

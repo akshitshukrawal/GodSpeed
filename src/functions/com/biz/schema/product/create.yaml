@@ -1,0 +1,6 @@
+summary: Create Product
+tasks:
+  - id: schema_product_create
+    fn: datasource.schema.Product.create
+    args:
+      data: <% inputs.body %>

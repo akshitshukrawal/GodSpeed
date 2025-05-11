@@ -1,0 +1,7 @@
+summary: Delete Subscription
+tasks:
+  - id: schema_subscription_delete
+    fn: datasource.schema.Subscription.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

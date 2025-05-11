@@ -1,0 +1,7 @@
+summary: Fetch Company
+tasks:
+  - id: schema_company_one
+    fn: datasource.schema.Company.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

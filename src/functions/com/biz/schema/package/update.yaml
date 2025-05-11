@@ -1,0 +1,8 @@
+summary: Update Package
+tasks:
+  - id: schema_package_update
+    fn: datasource.schema.Package.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

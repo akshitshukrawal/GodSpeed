@@ -1,0 +1,6 @@
+summary: Create Package
+tasks:
+  - id: schema_package_create
+    fn: datasource.schema.Package.create
+    args:
+      data: <% inputs.body %>

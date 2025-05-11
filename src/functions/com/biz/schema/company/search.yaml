@@ -1,0 +1,5 @@
+summary: Fetch many Company
+tasks:
+  - id: schema_company_search
+    fn: datasource.schema.Company.findMany
+    args: {}

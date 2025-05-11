@@ -1,0 +1,17 @@
+# CREATE
+http.post./schema/product:
+  summary: Create a new Product
+  description: Create Product from database
+  fn: com.biz.schema.product.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Product'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+

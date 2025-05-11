@@ -1,0 +1,23 @@
+# UPDATE
+http.put./schema/subscription/{id}:
+  summary: Update a Subscription
+  description: Update Subscription from database
+  fn: com.biz.schema.subscription.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/schema/Subscription'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+

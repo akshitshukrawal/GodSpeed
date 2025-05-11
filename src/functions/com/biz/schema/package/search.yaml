@@ -1,0 +1,5 @@
+summary: Fetch many Package
+tasks:
+  - id: schema_package_search
+    fn: datasource.schema.Package.findMany
+    args: {}
