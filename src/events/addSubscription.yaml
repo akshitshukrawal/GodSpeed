@@ -1,0 +1,33 @@
+"http.post./addsubscription":
+  summary: Adds a new subscription for a user by an admin.
+  fn: addSubscription
+  runtime: nodejs
+  source: addSubscription
+  authn: false
+  tags:
+    - subscription
+  body:
+    type: object
+    required:
+      - userId
+      - packageId
+      - targetUserId
+    properties:
+      userId:
+        type: string
+      packageId:
+        type: string
+      targetUserId:
+        type: string
+  responses:
+    200:
+      description: Subscription created successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              subscription:
+                type: object

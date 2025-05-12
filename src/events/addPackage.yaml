@@ -1,0 +1,39 @@
+"http.post./addpackage":
+  summary: Adds a new package to a product by an admin user.
+  fn: addPackage
+  runtime: nodejs
+  source: addPackage
+  authn: false
+  tags:
+    - package
+  body:
+    type: object
+    required:
+      - productId
+      - name
+      - price
+      - interval
+      - userId
+    properties:
+      productId:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      interval:
+        type: string
+      userId:
+        type: string
+  responses:
+    200:
+      description: Package created successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              package:
+                type: object

@@ -1,0 +1,35 @@
+"http.post./addproduct":
+  summary: Adds a new product to a company by an admin user.
+  fn: addProduct
+  runtime: nodejs
+  source: addProduct
+  authn: false
+  tags:
+    - product
+  body:
+    type: object
+    required:
+      - companyId
+      - name
+      - userId
+    properties:
+      companyId:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      userId:
+        type: string
+  responses:
+    200:
+      description: Product created successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              product:
+                type: object
