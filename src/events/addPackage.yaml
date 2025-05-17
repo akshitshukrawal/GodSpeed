@@ -11,17 +11,11 @@
     required:
       - productId
       - name
-      - price
-      - interval
       - userId
     properties:
       productId:
         type: string
       name:
-        type: string
-      price:
-        type: number
-      interval:
         type: string
       userId:
         type: string

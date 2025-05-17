@@ -13,17 +13,20 @@ export default async function addProductFunction(ctx: GSContext): Promise<GSStat
   const user = await prisma.user.findUnique({ where: { id: userId } });
 
   if (!user) {
-    return new GSStatus(false, 404, "User not found.");
+    return new GSStatus(false, 404, "User not found.",{
+    message: "User not found."});
   }
 
   if (user.role !== 'ADMIN') {
-    return new GSStatus(false, 403, "Only ADMIN users can add products.");
+    return new GSStatus(false, 403, "Only ADMIN users can add products.",{
+    message: "Only ADMIN users can add products."});
   }
 
   const company = await prisma.company.findUnique({ where: { id: companyId } });
 
   if (!company) {
-    return new GSStatus(false, 404, "Company not found.");
+    return new GSStatus(false, 404, "Company not found.",{
+    message: "Company not found."});
   }
 
   const product = await prisma.product.create({

@@ -3,6 +3,7 @@ http.post./schema/user:
   summary: Create a new User
   description: Create User from database
   fn: com.biz.schema.user.create
+  authn: false
   body:
     content:
       application/json:

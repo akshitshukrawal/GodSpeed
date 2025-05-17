@@ -10,7 +10,8 @@ export default async function addSubscription(ctx: GSContext): Promise<GSStatus>
 
   const admin = await prisma.user.findUnique({ where: { id: userId } });
   if (!admin) return new GSStatus(false, 404, "Admin user not found.");
-  if (admin.role !== 'ADMIN') return new GSStatus(false, 403, "Only ADMIN users can create subscriptions.");
+  if (admin.role !== 'ADMIN') return new GSStatus(false, 403, "Only ADMIN users can add products.",{
+    message: "Only ADMIN users can add products."});
 
   const pkg = await prisma.package.findUnique({ where: { id: packageId } });
   if (!pkg) return new GSStatus(false, 404, "Package not found.");

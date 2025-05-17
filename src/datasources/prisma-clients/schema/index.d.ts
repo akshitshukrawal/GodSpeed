@@ -3236,75 +3236,45 @@ export namespace Prisma {
 
   export type AggregatePackage = {
     _count: PackageCountAggregateOutputType | null
-    _avg: PackageAvgAggregateOutputType | null
-    _sum: PackageSumAggregateOutputType | null
     _min: PackageMinAggregateOutputType | null
     _max: PackageMaxAggregateOutputType | null
-  }
-
-  export type PackageAvgAggregateOutputType = {
-    price: number | null
-  }
-
-  export type PackageSumAggregateOutputType = {
-    price: number | null
   }
 
   export type PackageMinAggregateOutputType = {
     id: string | null
     name: string | null
-    price: number | null
-    interval: string | null
     productId: string | null
   }
 
   export type PackageMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    price: number | null
-    interval: string | null
     productId: string | null
   }
 
   export type PackageCountAggregateOutputType = {
     id: number
     name: number
-    price: number
-    interval: number
     productId: number
     _all: number
   }
 
 
-  export type PackageAvgAggregateInputType = {
-    price?: true
-  }
-
-  export type PackageSumAggregateInputType = {
-    price?: true
-  }
-
   export type PackageMinAggregateInputType = {
     id?: true
     name?: true
-    price?: true
-    interval?: true
     productId?: true
   }
 
   export type PackageMaxAggregateInputType = {
     id?: true
     name?: true
-    price?: true
-    interval?: true
     productId?: true
   }
 
   export type PackageCountAggregateInputType = {
     id?: true
     name?: true
-    price?: true
-    interval?: true
     productId?: true
     _all?: true
   }
@@ -3347,18 +3317,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: PackageAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: PackageSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: PackageMinAggregateInputType
@@ -3389,8 +3347,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: PackageCountAggregateInputType | true
-    _avg?: PackageAvgAggregateInputType
-    _sum?: PackageSumAggregateInputType
     _min?: PackageMinAggregateInputType
     _max?: PackageMaxAggregateInputType
   }
@@ -3398,12 +3354,8 @@ export namespace Prisma {
   export type PackageGroupByOutputType = {
     id: string
     name: string
-    price: number
-    interval: string
     productId: string
     _count: PackageCountAggregateOutputType | null
-    _avg: PackageAvgAggregateOutputType | null
-    _sum: PackageSumAggregateOutputType | null
     _min: PackageMinAggregateOutputType | null
     _max: PackageMaxAggregateOutputType | null
   }
@@ -3425,8 +3377,6 @@ export namespace Prisma {
   export type PackageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    price?: boolean
-    interval?: boolean
     productId?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
     subscriptions?: boolean | Package$subscriptionsArgs<ExtArgs>
@@ -3436,8 +3386,6 @@ export namespace Prisma {
   export type PackageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    price?: boolean
-    interval?: boolean
     productId?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["package"]>
@@ -3445,8 +3393,6 @@ export namespace Prisma {
   export type PackageSelectScalar = {
     id?: boolean
     name?: boolean
-    price?: boolean
-    interval?: boolean
     productId?: boolean
   }
 
@@ -3468,8 +3414,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      price: number
-      interval: string
       productId: string
     }, ExtArgs["result"]["package"]>
     composites: {}
@@ -3868,8 +3812,6 @@ export namespace Prisma {
   interface PackageFieldRefs {
     readonly id: FieldRef<"Package", 'String'>
     readonly name: FieldRef<"Package", 'String'>
-    readonly price: FieldRef<"Package", 'Float'>
-    readonly interval: FieldRef<"Package", 'String'>
     readonly productId: FieldRef<"Package", 'String'>
   }
     
@@ -6168,8 +6110,6 @@ export namespace Prisma {
   export const PackageScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    price: 'price',
-    interval: 'interval',
     productId: 'productId'
   };
 
@@ -6239,20 +6179,6 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Float'
-   */
-  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
-    
-
-
-  /**
-   * Reference to a field of type 'Float[]'
-   */
-  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 
@@ -6410,8 +6336,6 @@ export namespace Prisma {
     NOT?: PackageWhereInput | PackageWhereInput[]
     id?: StringFilter<"Package"> | string
     name?: StringFilter<"Package"> | string
-    price?: FloatFilter<"Package"> | number
-    interval?: StringFilter<"Package"> | string
     productId?: StringFilter<"Package"> | string
     product?: XOR<ProductRelationFilter, ProductWhereInput>
     subscriptions?: SubscriptionListRelationFilter
@@ -6420,8 +6344,6 @@ export namespace Prisma {
   export type PackageOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    price?: SortOrder
-    interval?: SortOrder
     productId?: SortOrder
     product?: ProductOrderByWithRelationInput
     subscriptions?: SubscriptionOrderByRelationAggregateInput
@@ -6433,8 +6355,6 @@ export namespace Prisma {
     OR?: PackageWhereInput[]
     NOT?: PackageWhereInput | PackageWhereInput[]
     name?: StringFilter<"Package"> | string
-    price?: FloatFilter<"Package"> | number
-    interval?: StringFilter<"Package"> | string
     productId?: StringFilter<"Package"> | string
     product?: XOR<ProductRelationFilter, ProductWhereInput>
     subscriptions?: SubscriptionListRelationFilter
@@ -6443,14 +6363,10 @@ export namespace Prisma {
   export type PackageOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    price?: SortOrder
-    interval?: SortOrder
     productId?: SortOrder
     _count?: PackageCountOrderByAggregateInput
-    _avg?: PackageAvgOrderByAggregateInput
     _max?: PackageMaxOrderByAggregateInput
     _min?: PackageMinOrderByAggregateInput
-    _sum?: PackageSumOrderByAggregateInput
   }
 
   export type PackageScalarWhereWithAggregatesInput = {
@@ -6459,8 +6375,6 @@ export namespace Prisma {
     NOT?: PackageScalarWhereWithAggregatesInput | PackageScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Package"> | string
     name?: StringWithAggregatesFilter<"Package"> | string
-    price?: FloatWithAggregatesFilter<"Package"> | number
-    interval?: StringWithAggregatesFilter<"Package"> | string
     productId?: StringWithAggregatesFilter<"Package"> | string
   }
 
@@ -6683,8 +6597,6 @@ export namespace Prisma {
   export type PackageCreateInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     product: ProductCreateNestedOneWithoutPackagesInput
     subscriptions?: SubscriptionCreateNestedManyWithoutPackageInput
   }
@@ -6692,8 +6604,6 @@ export namespace Prisma {
   export type PackageUncheckedCreateInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     productId: string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutPackageInput
   }
@@ -6701,8 +6611,6 @@ export namespace Prisma {
   export type PackageUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     product?: ProductUpdateOneRequiredWithoutPackagesNestedInput
     subscriptions?: SubscriptionUpdateManyWithoutPackageNestedInput
   }
@@ -6710,8 +6618,6 @@ export namespace Prisma {
   export type PackageUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     productId?: StringFieldUpdateOperationsInput | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutPackageNestedInput
   }
@@ -6719,23 +6625,17 @@ export namespace Prisma {
   export type PackageCreateManyInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     productId: string
   }
 
   export type PackageUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
   }
 
   export type PackageUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     productId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -7001,17 +6901,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
   export type ProductRelationFilter = {
     is?: ProductWhereInput
     isNot?: ProductWhereInput
@@ -7030,49 +6919,19 @@ export namespace Prisma {
   export type PackageCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    price?: SortOrder
-    interval?: SortOrder
     productId?: SortOrder
-  }
-
-  export type PackageAvgOrderByAggregateInput = {
-    price?: SortOrder
   }
 
   export type PackageMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    price?: SortOrder
-    interval?: SortOrder
     productId?: SortOrder
   }
 
   export type PackageMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    price?: SortOrder
-    interval?: SortOrder
     productId?: SortOrder
-  }
-
-  export type PackageSumOrderByAggregateInput = {
-    price?: SortOrder
-  }
-
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -7384,14 +7243,6 @@ export namespace Prisma {
     connect?: SubscriptionWhereUniqueInput | SubscriptionWhereUniqueInput[]
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type ProductUpdateOneRequiredWithoutPackagesNestedInput = {
     create?: XOR<ProductCreateWithoutPackagesInput, ProductUncheckedCreateWithoutPackagesInput>
     connectOrCreate?: ProductCreateOrConnectWithoutPackagesInput
@@ -7612,33 +7463,6 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -7825,16 +7649,12 @@ export namespace Prisma {
   export type PackageCreateWithoutProductInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     subscriptions?: SubscriptionCreateNestedManyWithoutPackageInput
   }
 
   export type PackageUncheckedCreateWithoutProductInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutPackageInput
   }
 
@@ -7887,8 +7707,6 @@ export namespace Prisma {
     NOT?: PackageScalarWhereInput | PackageScalarWhereInput[]
     id?: StringFilter<"Package"> | string
     name?: StringFilter<"Package"> | string
-    price?: FloatFilter<"Package"> | number
-    interval?: StringFilter<"Package"> | string
     productId?: StringFilter<"Package"> | string
   }
 
@@ -8037,16 +7855,12 @@ export namespace Prisma {
   export type PackageCreateWithoutSubscriptionsInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     product: ProductCreateNestedOneWithoutPackagesInput
   }
 
   export type PackageUncheckedCreateWithoutSubscriptionsInput = {
     id?: string
     name: string
-    price: number
-    interval: string
     productId: string
   }
 
@@ -8096,16 +7910,12 @@ export namespace Prisma {
   export type PackageUpdateWithoutSubscriptionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     product?: ProductUpdateOneRequiredWithoutPackagesNestedInput
   }
 
   export type PackageUncheckedUpdateWithoutSubscriptionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     productId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -8250,31 +8060,23 @@ export namespace Prisma {
   export type PackageCreateManyProductInput = {
     id?: string
     name: string
-    price: number
-    interval: string
   }
 
   export type PackageUpdateWithoutProductInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     subscriptions?: SubscriptionUpdateManyWithoutPackageNestedInput
   }
 
   export type PackageUncheckedUpdateWithoutProductInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutPackageNestedInput
   }
 
   export type PackageUncheckedUpdateManyWithoutProductInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    price?: FloatFieldUpdateOperationsInput | number
-    interval?: StringFieldUpdateOperationsInput | string
   }
 
   export type SubscriptionCreateManyPackageInput = {

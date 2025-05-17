@@ -3,4 +3,10 @@ tasks:
   - id: schema_user_create
     fn: datasource.schema.User.create
     args:
-      data: <% inputs.body %>
+      data:
+        name: <% inputs.body.name %>
+        email: <% inputs.body.email %>
+        role: <% inputs.body.role %>
+        company:
+          connect:
+            id: <% inputs.body.company %>
